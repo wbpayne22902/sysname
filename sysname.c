@@ -1,3 +1,6 @@
+/*
+   Welcome to my app.
+*/
 #include <stdio.h>
 #include <sys/utsname.h>
 #include <libgen.h>
