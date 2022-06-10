@@ -1,5 +1,7 @@
 /*
    Welcome to my app.
+   This app is a simple console app that tells you what Unix-based system
+   you are running.
 */
 #include <stdio.h>
 #include <sys/utsname.h>
