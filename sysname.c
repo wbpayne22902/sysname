@@ -5,6 +5,7 @@
 */
 #include <stdio.h>
 #include <sys/utsname.h>
+#include <sys/types.h>
 #include <libgen.h>
 #include <unistd.h>
 
