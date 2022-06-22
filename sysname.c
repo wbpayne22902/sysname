@@ -14,10 +14,10 @@ int main(int ac, char *av[]) {
 	uname(&a);
 	pid_t p = getpid();
 	printf("%s[%d]: You are running %s ver %s on a(n) %s.\n", basename(av[0]), p, a.sysname, a.release, a.machine);
-	for (int i = 1; i <= 15; i++)
-	{
+	for (int i = 1; i <= 15; i++) {
 		printf("i[%d] = %d.\t", i, i);
 	}
+	
 	printf("\n");
 	
 	printf("Now exiting...\n");
