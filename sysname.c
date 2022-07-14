@@ -4,6 +4,7 @@
    you are running.
 */
 #include <stdio.h>
+#include <stdlib.h>
 #include <sys/utsname.h>
 #include <sys/types.h>
 #include <libgen.h>
@@ -21,6 +22,6 @@ int main(int ac, char *av[]) {
 	printf("\n");
 	
 	printf("Now exiting...\n");
-	return 0;
+	return EXIT_SUCCESS;
 }
 

@@ -2,4 +2,6 @@ sysname
 sysname.dSYM/*
 .vscode/*
 .DS_Store
+*.o
+*.s
 
