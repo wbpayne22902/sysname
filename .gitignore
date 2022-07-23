@@ -4,4 +4,9 @@ sysname.dSYM/*
 .DS_Store
 *.o
 *.s
+*.html
+*.jpg
+*.png
+*.bmp
+sysname.txt
 
