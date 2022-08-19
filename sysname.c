@@ -21,7 +21,7 @@ int main(int ac, char *av[]) {
 	}
 	
 	printf("\n");
-	
+	printf("Thank you for using %s.\n", basename(av[0]));
 	printf("Now exiting...\n");
 	return EXIT_SUCCESS;
 }
