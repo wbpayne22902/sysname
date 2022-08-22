@@ -10,4 +10,6 @@ sysname.dSYM/*
 *.bmp
 sysname.txt
 *.css
+build
+
 
