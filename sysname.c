@@ -1,7 +1,7 @@
 /*
    Welcome to my app.
    This app is a simple console app that tells you what Unix-based system
-   you are running.
+   you are running. Cool
 */
 #include <stdio.h>
 #include <stdlib.h>
