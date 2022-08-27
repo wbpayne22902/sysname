@@ -2,6 +2,7 @@
    Welcome to my app.
    This app is a simple console app that tells you what Unix-based system
    you are running. Cool
+   It also writes the system name to a file.
 */
 #include <stdio.h>
 #include <stdlib.h>
