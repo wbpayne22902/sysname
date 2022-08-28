@@ -25,7 +25,7 @@ int main(int ac, char *av[]) {
 	printf("\n");
 	int fd = open(mainname, O_CREAT | O_WRONLY | O_APPEND, 0644);
 	dprintf(fd, "%s[%d:%d]: You are running %s ver %s on a(n) %s.\n", basename(av[0]), p, pp, a.sysname, a.release, a.machine);
-	dprintf(fd, "Closing file...\n");
+	dprintf(fd, "Closing file with fd = %d....\n", fd);
 	close(fd);
 	printf("Thank you for using %s.\n", basename(av[0]));
 	printf("Now exiting...\n");
