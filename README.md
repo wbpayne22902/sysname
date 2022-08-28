@@ -1,2 +1,3 @@
 # My File
-**Cool**
+
+Welcome to my **Cool** program!
