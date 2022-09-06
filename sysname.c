@@ -15,6 +15,7 @@
 #define mainname "sysout.txt"
 int main(int ac, char *av[]) {
 	struct utsname a;
+	int fd;
 	uname(&a);
 	pid_t p = getpid();
 	pid_t pp = getppid();
@@ -23,7 +24,7 @@ int main(int ac, char *av[]) {
 		printf("i[%d] = %d.\t", i, i);
 	}
 	printf("\n");
-	int fd = open(mainname, O_CREAT | O_WRONLY | O_APPEND, 0644);
+	fd = open(mainname, O_CREAT | O_WRONLY | O_APPEND, 0644);
 	dprintf(fd, "%s[%d:%d]: You are running %s ver %s on a(n) %s.\n", basename(av[0]), p, pp, a.sysname, a.release, a.machine);
 	dprintf(fd, "Closing file with fd = %d....\n", fd);
 	close(fd);
