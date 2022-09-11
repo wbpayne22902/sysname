@@ -12,4 +12,6 @@ sysname.txt
 *.css
 build
 sysout.txt
+*.js
+*.wasm
 
