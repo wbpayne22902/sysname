@@ -17,6 +17,7 @@ int main(int ac, char *av[]) {
 	struct utsname a;
 	int fd;
 	uname(&a);
+	//get process id and parent process id
 	pid_t p = getpid();
 	pid_t pp = getppid();
 	printf("%s[%d:%d] (version %g): You are running %s ver %s on a(n) %s.\n", basename(av[0]), p, pp, prodVer, a.sysname, a.release, a.machine);
