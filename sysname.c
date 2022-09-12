@@ -11,9 +11,10 @@
 #include <libgen.h>
 #include <unistd.h>
 #include <fcntl.h>
-#define prodVer 0.7
+#define prodVer 0.8
 #define mainname "sysout.txt"
 int main(int ac, char *av[]) {
+	// Declare main variables
 	struct utsname a;
 	int fd;
 	uname(&a);
