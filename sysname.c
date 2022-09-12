@@ -11,7 +11,7 @@
 #include <libgen.h>
 #include <unistd.h>
 #include <fcntl.h>
-#define prodVer 0.7
+#define prodVer 0.8
 #define mainname "sysout.txt"
 int main(int ac, char *av[]) {
 	struct utsname a;
