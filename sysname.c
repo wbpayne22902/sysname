@@ -11,6 +11,8 @@
 #include <libgen.h>
 #include <unistd.h>
 #include <fcntl.h>
+#include <errno.h>
+#include <string.h>
 #define prodVer 0.8
 #define mainname "sysout.txt"
 int main(int ac, char *av[]) {
@@ -30,6 +32,10 @@ int main(int ac, char *av[]) {
 	dprintf(fd, "%s[%d:%d]: You are running %s ver %s on a(n) %s.\n", basename(av[0]), p, pp, a.sysname, a.release, a.machine);
 	dprintf(fd, "Closing file with fd = %d....\n", fd);
 	close(fd);
+	int ret = dprintf(fd, "This may not work.\n");
+	if(ret < 0) {
+		printf("Error encountered: %s\n", strerror(errno));
+	}
 	printf("Thank you for using %s.\n", basename(av[0]));
 	printf("Now exiting...\n");
 	return EXIT_SUCCESS;
