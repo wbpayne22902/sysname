@@ -15,3 +15,5 @@ sysout.txt
 *.js
 *.wasm
 
+.cache/jb/UpdateWork.dat
+.cache/jb/version.txt
