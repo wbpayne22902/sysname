@@ -22,6 +22,7 @@ int main(int ac, char *av[]) {
 	pid_t p = getpid();
 	pid_t pp = getppid();
 	printf("%s[%d:%d] (version %g): You are running %s ver %s on a(n) %s.\n", basename(av[0]), p, pp, prodVer, a.sysname, a.release, a.machine);
+	//now a for loop
 	for (int i = 1; i <= 15; i++) {
 		printf("i[%d] = %d.\t", i, i);
 	}
