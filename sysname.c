@@ -33,6 +33,7 @@ int main(int ac, char *av[]) {
 	dprintf(fd, "Closing file with fd = %d...\n", fd);
 	//close file
 	close(fd);
+	//print exit message
 	printf("Thank you for using %s.\n", basename(av[0]));
 	printf("Now exiting...\n");
 	return EXIT_SUCCESS;
