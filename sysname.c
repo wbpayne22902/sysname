@@ -11,7 +11,7 @@
 #include <libgen.h>
 #include <unistd.h>
 #include <fcntl.h>
-#define prodVer 0.8
+#define prodVer 1.0
 #define mainname "sysout.txt"
 int main(int ac, char *av[]) {
 	// Declare main variables
