@@ -17,7 +17,13 @@ int main(int ac, char *av[]) {
 	// Declare main variables
 	struct utsname a;
 	int fd;
-	uname(&a);
+	
+	// Get system information with error checking
+	if (uname(&a) == -1) {
+		perror("uname");
+		return EXIT_FAILURE;
+	}
+	
 	//get process id and parent process id
 	pid_t p = getpid();
 	pid_t pp = getppid();
@@ -29,10 +35,29 @@ int main(int ac, char *av[]) {
 	printf("\n");
 	//open file
 	fd = open(mainname, O_CREAT | O_WRONLY | O_APPEND, 0644);
-	dprintf(fd, "%s[%d:%d]: You are running %s ver %s on a(n) %s.\n", basename(av[0]), p, pp, a.sysname, a.release, a.machine);
-	dprintf(fd, "Closing file with fd = %d...\n", fd);
+	if (fd == -1) {
+		perror("open");
+		return EXIT_FAILURE;
+	}
+	
+	// Write to file with error checking
+	if (dprintf(fd, "%s[%d:%d]: You are running %s ver %s on a(n) %s.\n", basename(av[0]), p, pp, a.sysname, a.release, a.machine) < 0) {
+		perror("dprintf");
+		close(fd);
+		return EXIT_FAILURE;
+	}
+	
+	if (dprintf(fd, "Closing file with fd = %d...\n", fd) < 0) {
+		perror("dprintf");
+		close(fd);
+		return EXIT_FAILURE;
+	}
+	
 	//close file
-	close(fd);
+	if (close(fd) == -1) {
+		perror("close");
+		return EXIT_FAILURE;
+	}
 	//print exit message
 	printf("Thank you for using %s.\n", basename(av[0]));
 	printf("Now exiting...\n");
