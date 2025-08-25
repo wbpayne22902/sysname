@@ -11,7 +11,7 @@
 #include <libgen.h>
 #include <unistd.h>
 #include <fcntl.h>
-#define prodVer 1.0
+#define prodVer 1.1
 #define mainname "sysout.txt"
 int main(int ac, char *av[]) {
 	// Declare main variables
@@ -20,7 +20,7 @@ int main(int ac, char *av[]) {
 	
 	// Get system information with error checking
 	if (uname(&a) == -1) {
-		perror("uname");
+		perror("uname didn't work.");
 		return EXIT_FAILURE;
 	}
 	
@@ -36,26 +36,26 @@ int main(int ac, char *av[]) {
 	//open file
 	fd = open(mainname, O_CREAT | O_WRONLY | O_APPEND, 0644);
 	if (fd == -1) {
-		perror("open");
+		perror("open didn't work");
 		return EXIT_FAILURE;
 	}
 	
 	// Write to file with error checking
 	if (dprintf(fd, "%s[%d:%d]: You are running %s ver %s on a(n) %s.\n", basename(av[0]), p, pp, a.sysname, a.release, a.machine) < 0) {
-		perror("dprintf");
+		perror("dprintf didn't work.");
 		close(fd);
 		return EXIT_FAILURE;
 	}
 	
 	if (dprintf(fd, "Closing file with fd = %d...\n", fd) < 0) {
-		perror("dprintf");
+		perror("dprintf didn't work.");
 		close(fd);
 		return EXIT_FAILURE;
 	}
 	
 	//close file
 	if (close(fd) == -1) {
-		perror("close");
+		perror("close didn't work.");
 		return EXIT_FAILURE;
 	}
 	//print exit message
